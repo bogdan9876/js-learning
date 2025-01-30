@@ -24,14 +24,15 @@ function Post() {
      { commentBody: newComment, PostId: id },
      {
         headers: {
-          accessToken: sessionStorage.getItem("accessToken")
+          accessToken: localStorage.getItem("accessToken")
         }
      })
       .then((response) => {
         if (response.data.error) {
           console.log(response.data.error)
         } else {
-          const commentToAdd = { commentBody: newComment }
+          const commentToAdd = { commentBody: newComment,
+             username: response.data.username }
           setComments([...comments, commentToAdd])
           setNewComment('')
         }
@@ -57,7 +58,10 @@ function Post() {
         </div>
         <div className="listOfComments">
           {comments.map((comment, key) => {
-            return <div key={key} className='comment'>{comment.commentBody}</div>
+            return <div key={key} className='comment'>
+            {comment.commentBody}
+            <label>Username: {comment.username}</label>
+            </div>
           })}
         </div>
       </div>
