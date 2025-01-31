@@ -52,12 +52,15 @@ function App() {
         <Router>
           <div className="navbar">
             <div className="links">
-              <Link to="/createpost">Create A Post</Link>
-              <Link to="/">Home Page</Link>
-              {!authState.status && (
+              {!authState.status ? (
                 <>
                   <Link to="/login">Login</Link>
                   <Link to="/registrations">Registration</Link>
+                </>
+              ) : (
+                <>
+                  <Link to="/createpost">Create A Post</Link>
+                  <Link to="/">Home Page</Link>
                 </>
               )}
             </div>
