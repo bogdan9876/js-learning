@@ -26,7 +26,7 @@ router.post("/login", async (req, res) => {
         if (!match) res.json({error: "Wrong combination"})
 
         const accessToken = sign({username: user.username, id: user.id}, "importantsecret")
-        res.json(accessToken)
+        res.json({token: accessToken, username: username, id: user.id})
     })
 
 })

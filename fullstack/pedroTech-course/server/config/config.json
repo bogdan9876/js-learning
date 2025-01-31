@@ -1,9 +1,9 @@
 {
 "development": {
-    "username": "roman",
-    "password": "roman",
+    "username": "root",
+    "password": "bogda765",
     "database": "tutorialdb",
-    "host": "192.168.1.112",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
