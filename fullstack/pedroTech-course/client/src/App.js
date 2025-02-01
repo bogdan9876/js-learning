@@ -6,6 +6,7 @@ import Post from "./pages/Post"
 import Registration from "./pages/Registration"
 import Login from "./pages/Login"
 import Profile from "./pages/Profile"
+import ChangePassword from "./pages/ChangePassword"
 import PageNotFound from "./pages/PageNotFound"
 import { AuthContext } from './helpers/AuthContext'
 import { useState, useEffect } from "react";
@@ -77,6 +78,7 @@ function App() {
             <Route path="/post/:id" exact component={Post} />
             <Route path="/registrations" exact component={Registration} />
             <Route path="/login" exact component={Login} />
+            <Route path="/changepassword" exact component={ChangePassword} />
             <Route path="*" exact component={PageNotFound} />
           </Switch>
         </Router>
