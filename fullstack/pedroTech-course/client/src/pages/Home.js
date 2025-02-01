@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 import { AuthContext } from "../helpers/AuthContext"
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 
@@ -62,7 +62,9 @@ function Home() {
             <div className="title">{value.title}</div>
             <div className="body" onClick={() => { history.push(`/post/${value.id}`) }}>{value.postText}</div>
             <div className="footer">
-              <div className="username">{value.username}</div>
+              <div className="username">
+                <Link to={`/profile/${value.UserId}`}>{value.username}</Link>
+              </div>
               <div className="buttons">
                 <ThumbUpAltIcon onClick={() => { likeAPost(value.id) }}
                   className={likedPosts.includes(value.id) ? "unlikeBttn" : "likeBttn"} />

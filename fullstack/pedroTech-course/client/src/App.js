@@ -5,6 +5,7 @@ import CreatePost from "./pages/CreatePost"
 import Post from "./pages/Post"
 import Registration from "./pages/Registration"
 import Login from "./pages/Login"
+import Profile from "./pages/Profile"
 import PageNotFound from "./pages/PageNotFound"
 import { AuthContext } from './helpers/AuthContext'
 import { useState, useEffect } from "react";
@@ -72,6 +73,7 @@ function App() {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/createpost" exact component={CreatePost} />
+            <Route path="/profile/:id" exact component={Profile} />
             <Route path="/post/:id" exact component={Post} />
             <Route path="/registrations" exact component={Registration} />
             <Route path="/login" exact component={Login} />
